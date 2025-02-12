@@ -45,21 +45,21 @@ void checkDate() {
     // Задача 4
     // могу сделать другой формат ввода без / но так не получается проверять 02 и 2
     // если необходимо могу переделать
+    // все работает от даты 2025/02/10
     printf("Введите дату в формате год/Месяц/День, пример 2025/12/02: ");
     int year, month, day;
     scanf("%d/%d/%d", &year, &month, &day);
-    int baseYear, baseMonth, baseDay;
-    baseYear = 2025;
-    baseMonth = 02;
-    baseDay = 10;
+    const int baseYear = 2025;
     if (year > baseYear) {
         printf("Миссия будет позже\n");
         return;
     } else {
+        const int baseMonth = 02;
         if (month > baseMonth && year == baseYear) {
             printf("Миссия будет позже\n");
             return;
         } else {
+            const int baseDay = 10;
             if (day > baseDay && month == baseMonth && year == baseYear) {
                 printf("Миссия будет позже\n");
                 return;
@@ -84,7 +84,6 @@ void stableOrbit() {
         return;
     }
     printf("Орбита не стабильна(\n");
-    return;
 }
 
 int main() {
