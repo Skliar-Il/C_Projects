@@ -86,6 +86,30 @@ void stableOrbit() {
     printf("Орбита не стабильна(\n");
 }
 
+void checkSignal() {
+    // Задача 7
+    printf("Введти частоту сигнала: ");
+    float signal;
+    scanf("%f", &signal);
+    if (signal > 2.5 && signal < 3.5) {
+        printf("Сигнал стабилен");
+        return;
+    }
+    printf("Сигнал не стабилен\n");
+}
+
+void checkMassBox() {
+    // Задача 8
+    printf("Введите вес груза: ");
+    int mass;
+    scanf("%d", &mass);
+    if (mass % 4 == 0) {
+        printf("В каждом отсеке будет по %d\n", mass / 4);
+        return;
+    }
+    printf("Этот груз нельзя поместить(");
+}
+
 int main() {
     int number;
     printf("Введите номер задачи: ");
@@ -96,6 +120,8 @@ int main() {
         case 3: checkChar(); break;
         case 4: checkDate(); break;
         case 5: stableOrbit(); break;
+        case 7: checkSignal(); break;
+        case 8: checkMassBox(); break;
         default: printf("Неверное число, такой задачи еще нету :/\n"); break;
     }
     return 0;
